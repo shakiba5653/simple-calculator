@@ -1,0 +1,48 @@
+<html>
+
+</html>
+
+<head></head>
+
+<body>
+    <input type="text" placeholder="number1" id="input1" />
+    <input type="text" placeholder="number2" id="input2" />
+    <select id="operation">
+        <option value="+">addition</option>
+        <option value="-">Subtraction</option>
+        <option value="/">Division</option>
+        <option value="*">multiplication</option>
+        <option value="**">Exponentiation </option>
+        <option value="%">Division Remainder</option>
+    </select>
+    <button id="button">CALCULATE</button>
+    <p id="showResult"></p>
+    <script>
+        var button = document.getElementById("button")
+        button.addEventListener("click", calc)
+
+        function calc() {
+            var number1 = document.getElementById("input1").value;
+            var number2 = document.getElementById("input2").value;
+            var operation = document.getElementById("operation").value;
+            var final = "";
+            if (operation == "+") {
+                final = parseInt(number1) + parseInt(number2)
+            } else if (operation == "/") {
+                final = parseInt(number1) / parseInt(number2)
+            } else if (operation == "-") {
+                final = parseInt(number1) - parseInt(number2)
+            } else if (operation == "*") {
+                final = parseInt(number1) * parseInt(number2)
+            } else if (operation == "**") {
+                final = parseInt(number1) ** parseInt(number2)
+            } else if (operation == "%") {
+                final = parseInt(number1) % parseInt(number2)
+            } else {
+                alert("You chose the wrong operation")
+            }
+            document.getElementById("showResult").innerHTML = final
+        }
+    </script>
+
+</body>
